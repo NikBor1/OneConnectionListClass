@@ -1,5 +1,6 @@
 #ifndef NODECLASS_H_INCLUDED
 #define NODECLASS_H_INCLUDED
+
 #include <iostream>
 
 template <typename T>
@@ -54,9 +55,6 @@ Node<T>::Node()
     next = nullptr;
 }
 
-int main()
-{
-    return 0;
-}
 
-#endif
+
+#endif // NODECLASS_H_INCLUDED
