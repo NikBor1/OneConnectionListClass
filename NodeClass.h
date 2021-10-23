@@ -16,9 +16,11 @@ public:
     Node(T* nex);
     Node();
 
-    T val(){return value;}
-    T* nex(){return next;}
+    T get_value(){return value;}
+    T* get_next(){return next;}
 
+    void set_value(T val){value = val;}
+    void set_nex(Node<T>* nex){next = nex;}
 
 
 };
