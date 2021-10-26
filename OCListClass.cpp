@@ -11,6 +11,14 @@ class OCList
 public:
     OCList();
 
+
+    Node <T>* get_head(){return head;}
+    Node <T>* get_tail(){return tail;}
+    void set_head(Node <T>* he){head = he;}
+    void set_tail(Node <T>* ta){tail = ta;}
+
+
+
     void addElement(Node <T>* elem, int position)
     {
         if(position == 0)
