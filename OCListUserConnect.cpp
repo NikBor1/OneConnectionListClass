@@ -90,6 +90,34 @@ int main()
             std::cout << "The index is " << allNodes.size() - 1 << std::endl;
             break;
         }
+        case 3:
+        {
+            std::cout << "Enter index of node to change: \n";
+            int index = -1;
+            std::cin >> index;
+            std::cout << "Enter new value of node: \n";
+            int val = 0;
+            std::cin >> val;
+            allNodes[index].set_value(val);
+            break;
+        }
+        case 4:
+        {
+            OCList<T> ocl(); //проблемы с типом переменных
+            allLists.push_back(ocl);
+            std::cout << "The index is " << allLists.size() - 1 << std::endl;
+            break;
+        }
+        case 5:
+        {
+            std::cout << "Enter index of node to add: \n";
+            int indexNode = -1;
+            std::cin >> indexNode;
+            std::cout << "Enter index of list add to: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            allLists[indexList].addElement(&allNodes[indexNode], 0);
+        }
 
 
 
