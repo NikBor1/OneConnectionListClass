@@ -117,12 +117,130 @@ int main()
             int indexList = -1;
             std::cin >> indexList;
             allLists[indexList].addElement(&allNodes[indexNode], 0);
+            break;
         }
+        case 6:
+        {
+            std::cout << "Enter index of node to add: \n";
+            int indexNode = -1;
+            std::cin >> indexNode;
+            std::cout << "Enter index of list add to: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            allLists[indexList].addElementBack(&allNodes[indexNode]);
+            break;
+        }
+        case 7:
+        {
+            std::cout << "Enter index of node to add: \n";
+            int indexNode = -1;
+            std::cin >> indexNode;
+            std::cout << "Enter index of list add to: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << "Enter position add to: \n";
+            int indexPos = -1;
+            std::cin >> indexPos;
+            allLists[indexList].addElement(&allNodes[indexNode], indexPos);
+            break;
+        }
+        case 8:
+        {
+            std::cout << "Enter index of list delete from: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            allLists[indexList].deleteElementByIndex(0);
+            break;
+        }
+        case 9:
+        {
+            std::cout << "Enter index of list delete from: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            allLists[indexList].deleteTail();
+            break;
+        }
+        case 10:
+        {
+            std::cout << "Enter index of list delete from: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << "Enter position delete from: \n";
+            int indexPos = -1;
+            std::cin >> indexPos;
+            allLists[indexList].deleteElementByIndex(indexPos);
+            break;
+        }
+        case 11:
+        {
+            std::cout << "Enter index of list delete from: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << "Enter value to delete: \n";
+            int valueDel = -1;
+            std::cin >> valueDel;
+            allLists[indexList].deleteElementByValue(valueDel);
+            break;
+        }
+        case 12:
+        {
+            std::cout << "Enter index of list know about: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << "Enter value to know about: \n";
+            int valueKnow = -1;
+            std::cin >> valueKnow;
 
+            Node <T> valuerSame(valueKnow);
 
+            std::cout << "The index of the element is: "
 
+            return allLists[indexList].foundElementByValue(&valuerSame);
 
+            break;
+        }
+        case 13:
+        {
+            std::cout << "Enter index of list know about: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << "Enter position to know about: \n";
+            int indexKnow = -1;
+            std::cin >> indexKnow;
 
+            std::cout << "The value of the element is: "
+
+            return allLists[indexList][indexKnow];
+
+            break;
+        }
+        case 14:
+        {
+            std::cout << "Sorry, this option is unavailable now. We are working on it.\n"
+            break;
+        }
+        case 15:
+        {
+            std::cout << "Enter index of list know about: \n";
+            int indexList = -1;
+            std::cin >> indexList;
+            std::cout << allLists[indexList];
+            break;
+        }
+        case 16:
+        {
+            std::cout << "Developer: Borisevich N. V. \n E-mail: borisevich170@yandex.ru \n";
+            break;
+        }
+        case 42:
+        {
+            std::cout << "Hi! Now you have admin rights. There aren't any yet, but I'm working on it. Have a nice day! \n"
+            break;
+        }
+        default:
+        {
+            std::cout << "Sorry, this command code is unavailable. Please try again. \n"
+        }
 
         }
     }
