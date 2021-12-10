@@ -10,49 +10,9 @@ int main()
 
     std::cout << "Hello!\n";
 
-    bool error = true;
+    std::vector <Node <double> > allNodes;
+    std::vector <OCList <double> > allLists;
 
-    while(error)
-    {
-        std::cout << "Please choose the type of values in lists:\n enter 1 for int, 2 for double and 3 for string:\n";
-
-        int ch = 0;
-
-        std::cin >> ch;
-
-        switch (ch)
-        {
-            case 1:
-            {
-                std::vector <Node <int> > allNodes;
-                std::vector <OCList <int> > allLists;
-                error = false;
-                break;
-            }
-
-            case 2:
-            {
-                std::vector <Node <float> > allNodes;
-                std::vector <OCList <float> > allLists;
-                error = false;
-                break;
-            }
-
-            case 3:
-            {
-                std::vector <Node <std::string> > allNodes;
-                std::vector <OCList <std::string> > allLists;
-                error = false;
-                break;
-            }
-
-            default:
-            {
-                std::cout << "Sorry, but this type is not supported now. Please, try again.";
-                error = true;
-                break;
-            }
-        }
 
 
 
@@ -85,7 +45,7 @@ int main()
 
         case 2:
         {
-            Node<T> no(); //проблемы с типом переменных
+            Node<double> no; //проблемы с типом переменных
             allNodes.push_back(no);
             std::cout << "The index is " << allNodes.size() - 1 << std::endl;
             break;
@@ -103,7 +63,7 @@ int main()
         }
         case 4:
         {
-            OCList<T> ocl(); //проблемы с типом переменных
+            OCList<double> ocl; //проблемы с типом переменных
             allLists.push_back(ocl);
             std::cout << "The index is " << allLists.size() - 1 << std::endl;
             break;
@@ -177,7 +137,7 @@ int main()
             int indexList = -1;
             std::cin >> indexList;
             std::cout << "Enter value to delete: \n";
-            int valueDel = -1;
+            double valueDel = -1;
             std::cin >> valueDel;
             allLists[indexList].deleteElementByValue(valueDel);
             break;
@@ -188,14 +148,14 @@ int main()
             int indexList = -1;
             std::cin >> indexList;
             std::cout << "Enter value to know about: \n";
-            int valueKnow = -1;
+            double valueKnow = -1;
             std::cin >> valueKnow;
 
-            Node <T> valuerSame(valueKnow);
+            Node <double> valuerSame(valueKnow);
 
-            std::cout << "The index of the element is: "
+            std::cout << "The index of the element is: ";
 
-            return allLists[indexList].foundElementByValue(&valuerSame);
+            std::cout << allLists[indexList].foundElementByValue(&valuerSame);
 
             break;
         }
@@ -208,15 +168,15 @@ int main()
             int indexKnow = -1;
             std::cin >> indexKnow;
 
-            std::cout << "The value of the element is: "
+            std::cout << "The value of the element is: ";
 
-            return allLists[indexList][indexKnow];
+            std::cout << allLists[indexList][indexKnow];
 
             break;
         }
         case 14:
         {
-            std::cout << "Sorry, this option is unavailable now. We are working on it.\n"
+            std::cout << "Sorry, this option is unavailable now. We are working on it.\n";
             break;
         }
         case 15:
@@ -234,12 +194,13 @@ int main()
         }
         case 42:
         {
-            std::cout << "Hi! Now you have admin rights. There aren't any yet, but I'm working on it. Have a nice day! \n"
+            std::cout << "Hi! Now you have admin rights. There aren't any yet, but I'm working on it. Have a nice day! \n";
             break;
         }
         default:
         {
-            std::cout << "Sorry, this command code is unavailable. Please try again. \n"
+            std::cout << "Sorry, this command code is unavailable. Please try again. \n";
+            break;
         }
 
         }

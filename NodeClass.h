@@ -8,7 +8,7 @@ template <typename T>
 class Node
 {
     T value;
-    T* next;
+    Node<T>* next;
 
 public:
     Node(T val, T* nex);
@@ -17,7 +17,7 @@ public:
     Node();
 
     T get_value(){return value;}
-    T* get_next(){return next;}
+    Node<T>* get_next(){return next;}
 
     void set_value(T val){value = val;}
     void set_nex(Node<T>* nex){next = nex;}
