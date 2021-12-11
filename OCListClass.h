@@ -12,7 +12,9 @@ public:
     OCList();
 
     Node <T>* get_head(){return head;}
+    Node <T>* get_head() const {return head;}
     Node <T>* get_tail(){return tail;}
+    Node <T>* get_tail() const{return tail;}
     void set_head(Node <T>* he){head = he;}
     void set_tail(Node <T>* ta){tail = ta;}
 
@@ -130,7 +132,7 @@ OCList <T> :: OCList()
 }
 
 template <typename Type>
-std::ostream& operator<<(std::ostream& out, const OCList <Type>& ocl)
+std::ostream& operator<<(std::ostream& s_tream, const OCList <Type>& ocl)
 {
     Node <Type>* nowAt = ocl.get_head();
 
@@ -139,6 +141,8 @@ std::ostream& operator<<(std::ostream& out, const OCList <Type>& ocl)
         nowAt = nowAt->get_next();
         std::cout << nowAt->get_value() << " ";
     }
+
+    return s_tream;
 }
 
 
