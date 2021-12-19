@@ -18,11 +18,13 @@ public:
     void set_head(Node <T>* he){head = he;}
     void set_tail(Node <T>* ta){tail = ta;}
 
-    void addElement(Node <T>* elem, int position)
+    void addElement(T val, int position)
     {
+        Node <T>* elem = new Node<T>(val);
+
         if(position == 0)
         {
-            elem->set_nex(head);
+            elem->set_next(head);
             head = elem;
         }
         else
@@ -32,8 +34,8 @@ public:
             for(int i = 1; i < position; i ++)
                 nowAt = nowAt->get_next();
 
-            elem->set_nex(nowAt->get_next());
-            nowAt->set_nex(elem);
+            elem->set_next(nowAt->get_next());
+            nowAt->set_next(elem);
         }
 
         if(elem->get_next() == nullptr)
@@ -41,9 +43,11 @@ public:
     }
 
 
-    void addElementBack(Node <T>* elem)
+    void addElementBack(T val)
     {
-        elem->set_nex(nullptr);
+        Node <T>* elem = new Node<T>(val);
+
+        elem->set_next(nullptr);
         tail = elem;
     }
 
@@ -58,7 +62,7 @@ public:
             for(int i = 1; i < position; i ++)
                 nowAt = nowAt->get_next();
 
-            nowAt->set_nex((nowAt->get_next())->get_next());
+            nowAt->set_next((nowAt->get_next())->get_next());
 
             if(nowAt->get_next() == nullptr)
             tail = nowAt;
@@ -74,7 +78,7 @@ public:
         while((nowAt->get_next())->get_next() != nullptr)
             nowAt = nowAt->get_next();
 
-        nowAt->set_nex(nullptr);
+        nowAt->set_next(nullptr);
         tail = nowAt;
     }
 
@@ -87,14 +91,16 @@ public:
         while((nowAt->get_next())->get_value() != sameElement.get_value())
             nowAt = nowAt->get_next();
 
-        nowAt->set_nex((nowAt->get_next())->get_next());
+        nowAt->set_next((nowAt->get_next())->get_next());
 
         if(nowAt->get_next() == nullptr)
             tail = nowAt;
     }
 
-    int foundElementByValue(Node <T>* sameElement)
+    int foundElementByValue(T val)
     {
+        Node <T>* sameElement = new Node<T>(val);
+
         Node <T>* nowAt = head;
         int index = 0;
 
@@ -136,11 +142,13 @@ std::ostream& operator<<(std::ostream& s_tream, const OCList <Type>& ocl)
 {
     Node <Type>* nowAt = ocl.get_head();
 
-    while((nowAt->get_next())->get_next() != nullptr)
+    while(nowAt->get_next() != nullptr)
     {
-        nowAt = nowAt->get_next();
         std::cout << nowAt->get_value() << " ";
+        nowAt = nowAt->get_next();
+
     }
+     std::cout << nowAt->get_value() << std::endl;
 
     return s_tream;
 }

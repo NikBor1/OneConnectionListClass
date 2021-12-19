@@ -11,26 +11,26 @@ class Node
     Node<T>* next;
 
 public:
-    Node(T val, T* nex);
+    Node(T val, Node<T>* nex);
     Node(T val);
-    Node(T* nex);
+    Node(Node<T>* nex);
     Node();
 
     T get_value(){return value;}
     Node<T>* get_next(){return next;}
 
     void set_value(T val){value = val;}
-    void set_nex(Node<T>* nex){next = nex;}
+    void set_next(Node<T>* nex){next = nex;}
 
 
 };
 
 template <typename T>
 
-Node<T>::Node(T val, T* nex)
+Node<T>::Node(T val, Node<T>* nex)
 {
     value = val;
-    next = next;
+    next = nex;
 }
 
 template <typename T>
@@ -43,10 +43,10 @@ Node<T>::Node(T val)
 
 template <typename T>
 
-Node<T>::Node(T* nex)
+Node<T>::Node(Node<T>* nex)
 {
     value = 0;
-    next = next;
+    next = nex;
 }
 
 template <typename T>
